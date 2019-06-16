@@ -16,7 +16,7 @@ RUN ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     tar -C /usr/local -xzf go.tgz && rm go.tgz && \
     mkdir -p "$GOPATH/src" "%GOPATH/bin" && chmod -R 777 "$GOPATH" && \
     git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go && \
-    vim +GoInstallBinaries +qa
+    vim +':silent :GoUpdateBinaries' +':qa'
 
 WORKDIR /root/go/src
 
